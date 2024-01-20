@@ -1,0 +1,14 @@
+/Users/carlos/Documents/code/school/semester2/comp-123/labs/lab1/bin/Debug/net7.0/lab1
+/Users/carlos/Documents/code/school/semester2/comp-123/labs/lab1/bin/Debug/net7.0/lab1.deps.json
+/Users/carlos/Documents/code/school/semester2/comp-123/labs/lab1/bin/Debug/net7.0/lab1.runtimeconfig.json
+/Users/carlos/Documents/code/school/semester2/comp-123/labs/lab1/bin/Debug/net7.0/lab1.dll
+/Users/carlos/Documents/code/school/semester2/comp-123/labs/lab1/bin/Debug/net7.0/lab1.pdb
+/Users/carlos/Documents/code/school/semester2/comp-123/labs/lab1/obj/Debug/net7.0/lab1.GeneratedMSBuildEditorConfig.editorconfig
+/Users/carlos/Documents/code/school/semester2/comp-123/labs/lab1/obj/Debug/net7.0/lab1.AssemblyInfoInputs.cache
+/Users/carlos/Documents/code/school/semester2/comp-123/labs/lab1/obj/Debug/net7.0/lab1.AssemblyInfo.cs
+/Users/carlos/Documents/code/school/semester2/comp-123/labs/lab1/obj/Debug/net7.0/lab1.csproj.CoreCompileInputs.cache
+/Users/carlos/Documents/code/school/semester2/comp-123/labs/lab1/obj/Debug/net7.0/lab1.dll
+/Users/carlos/Documents/code/school/semester2/comp-123/labs/lab1/obj/Debug/net7.0/refint/lab1.dll
+/Users/carlos/Documents/code/school/semester2/comp-123/labs/lab1/obj/Debug/net7.0/lab1.pdb
+/Users/carlos/Documents/code/school/semester2/comp-123/labs/lab1/obj/Debug/net7.0/lab1.genruntimeconfig.cache
+/Users/carlos/Documents/code/school/semester2/comp-123/labs/lab1/obj/Debug/net7.0/ref/lab1.dll
