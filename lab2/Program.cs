@@ -4,7 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Medal.run();
+        Medal.run();
         Pet.run();
     }
 }
