@@ -11,6 +11,7 @@ public class Atom
     public int Neutron { get; set; }
     public double Weight { get; set; }
 
+    // important to have a parameterless constructor for serialization
     public Atom() { }
 
     public Atom(string name, int proton, int neutron, double weight, string symbol)
@@ -29,13 +30,12 @@ public class Atom
 
     public static Atom Parse(string objectData)
     {
-        string[] pars = objectData.Split(" ");
-        if (pars.Length != 5)
+        string[] parts = objectData.Split(" ");
+        if (parts.Length != 5)
         {
             throw new ArgumentException("The string is not in the correct format");
         }
-
-        return new Atom(pars[0], int.Parse(pars[1]), int.Parse(pars[2]), double.Parse(pars[3]), pars[4]);
+        return new Atom(parts[0], Convert.ToInt32(parts[1]), Convert.ToInt32(parts[2]), Convert.ToDouble(parts[3]), parts[4]);
     }
 
     public static List<Atom> GetAtoms()
@@ -120,29 +120,22 @@ public class Atom
         Console.WriteLine(atom);
     }
 
-    public static void WriteJson(List<Atom> atoms, string filename)
+    public static void WriteJson(Atom atom, string filename)
     {
-        string json = JsonSerializer.Serialize(atoms[0]);
-        TextWriter writer = new StreamWriter(filename);
-        writer.WriteLine(json);
-        writer.Close();
-
+        string json = JsonSerializer.Serialize(atom);
+        File.WriteAllText(filename, json);
     }
 
-    public static void WriteAllJson(List<Atom> atoms, string filename)
+    public static void WriteJson(List<Atom> atoms, string filename)
     {
         string json = JsonSerializer.Serialize(atoms);
-        TextWriter writer = new StreamWriter(filename);
-        writer.WriteLine(json);
-        writer.Close();
+        File.WriteAllText(filename, json);
     }
 
     public static void ReadJson(string filename)
     {
-        TextReader reader = new StreamReader(filename);
-        string json = reader.ReadToEnd();
-
-        Atom? atom = JsonSerializer.Deserialize(json, typeof(Atom)) as Atom;
+        string json = File.ReadAllText(filename);
+        Atom? atom = JsonSerializer.Deserialize<Atom>(json);
         if (atom != null)
         {
             Console.WriteLine(atom);
@@ -151,10 +144,8 @@ public class Atom
 
     public static void ReadAllJson(string filename)
     {
-        TextReader reader = new StreamReader(filename);
-        string json = reader.ReadToEnd();
-
-        Atom[]? atoms = JsonSerializer.Deserialize(json, typeof(Atom[])) as Atom[];
+        string json = File.ReadAllText(filename);
+        Atom[]? atoms = JsonSerializer.Deserialize<Atom[]>(json);
         if (atoms != null)
         {
             foreach (var atom in atoms)
@@ -167,17 +158,23 @@ public class Atom
     public static void run()
     {
         List<Atom> atoms = Atom.GetAtoms();
+        Console.WriteLine("Start List of atoms");
         Atom.ListAtoms(atoms);
+        Console.WriteLine("End List of atoms\n");
+
+        Console.WriteLine("Start Write XML");
         Atom.WriteXml(atoms, "hydrogen.xml");
         Atom.ReadXml("hydrogen.xml");
-        Atom.WriteJson(atoms, "hydrogen.json");
+        Console.WriteLine("End ReadXML\n");
+
+        Console.WriteLine("Start Write single Json");
+        Atom.WriteJson(atoms[0], "hydrogen.json");
         Atom.ReadJson("hydrogen.json");
-        Atom.WriteAllJson(atoms, "atoms.json");
+        Console.WriteLine("End Read single Json\n");
+
+        Console.WriteLine("Start Write Json");
+        Atom.WriteJson(atoms, "atoms.json");
         Atom.ReadAllJson("atoms.json");
+        Console.WriteLine("End Read Json\n");
     }
-
-
-
-
-
 }

@@ -5,16 +5,10 @@ class Complex
     public int Real { get; }
     public int Imaginary { get; }
 
-    // computed property
-    public double Argument
-    {
-        get { return Math.Atan2(Imaginary, Real); }
-
-    }
-    public double Modulus
-    {
-        get { return Math.Sqrt(Math.Pow(Real, 2) + Imaginary); }
-    }
+    public double Argument => Math.Atan((double)Imaginary / Real);
+    public double Modulus => Math.Sqrt(Math.Pow(Real, 2) + Math.Pow(Imaginary, 2));
+    // public double Argument { get { return Math.Atan((double)Imaginary / Real); } }
+    // public double Modulus { get { return Math.Sqrt(Math.Pow(Real, 2) + Imaginary); } }
 
     // factory property
     public static Complex Zero = new Complex();
@@ -55,7 +49,7 @@ class Complex
     {
         bool isReal = lhs.Real != rhs.Real;
         bool isImaginary = lhs.Imaginary != rhs.Imaginary;
-        return isReal && isImaginary;
+        return isReal || isImaginary;
     }
     public static Complex operator *(Complex lhs, Complex rhs)
     {
