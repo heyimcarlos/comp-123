@@ -7,6 +7,8 @@ class Complex
 
     public double Argument => Math.Atan((double)Imaginary / Real);
     public double Modulus => Math.Sqrt(Math.Pow(Real, 2) + Math.Pow(Imaginary, 2));
+
+    // this is anothe way to define computed properties
     // public double Argument { get { return Math.Atan((double)Imaginary / Real); } }
     // public double Modulus { get { return Math.Sqrt(Math.Pow(Real, 2) + Imaginary); } }
 

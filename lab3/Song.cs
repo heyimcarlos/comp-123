@@ -1,6 +1,6 @@
 ﻿namespace lab3;
 
-public enum SongGenre
+enum SongGenre
 {
     Unclassified = 0,
     Pop = 0b1,
@@ -11,7 +11,7 @@ public enum SongGenre
     Soul = 0b100000,
 }
 
-public class Song
+class Song
 {
     public string artist;
     public string title;

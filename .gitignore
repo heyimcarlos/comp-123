@@ -20,3 +20,6 @@ lab2/obj/Debug/net7.0/*.dll
 
 /lab2/
 
+.DS_Store
+
+

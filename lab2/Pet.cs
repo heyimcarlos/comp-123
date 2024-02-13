@@ -36,6 +36,7 @@ public class Pet
     public static void run()
     {
         Pet p1 = new Pet("Jim", 5, "a rottweiler dog");
+        Pet p5 = p1;
         Pet p2 = new Pet("Pacco", 2, "a chihuahua dog");
         Pet p3 = new Pet("Hulk", 5, "a siamese cat");
         Pet p4 = new Pet("Leonidas", 5, "a grey ferret");

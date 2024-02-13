@@ -15,8 +15,8 @@ class Time
 
     public Time(int hour = 0, int minute = 0)
     {
-        this.hour = hour >= 0 && hour <= 24 ? hour : 0;
-        this.minute = minute >= 0 && minute <= 60 ? minute : 0;
+        this.hour = hour > 0 && hour <= 24 ? hour : 0;
+        this.minute = minute > 0 && minute <= 60 ? minute : 0;
     }
 
     public override string ToString()

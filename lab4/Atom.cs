@@ -5,11 +5,11 @@ using System.Text.Json;
 
 public class Atom
 {
-    public string Name { get; set; }
-    public string Symbol { get; set; }
-    public int Proton { get; set; }
-    public int Neutron { get; set; }
-    public double Weight { get; set; }
+    public string Name { set; }
+    public string Symbol { set; }
+    public int Proton { set; }
+    public int Neutron { set; }
+    public double Weight { set; }
 
     // important to have a parameterless constructor for serialization
     public Atom() { }
