@@ -9,7 +9,7 @@ class Program
         terminator.SetGenre(GenreEnum.Horror | GenreEnum.Action);
         terminator.AddActor("Linda Hamilton");
         Show s1 = new Show(terminator, new Time(11, 35), DayEnum.Mon, 5.95);
-        Console.WriteLine(s1);
+        // Console.WriteLine(s1);
         Console.WriteLine(s1); //displays one object
 
         Theatre eglinton = new Theatre("Cineplex");

@@ -17,9 +17,6 @@ abstract class Shape
 
     public static void run()
     {
-        //although Shape is an abstract is can be used as a reference type
-        //any child class of Shape is also a Shape
-        
         List<Shape> shapes = new List<Shape>();
         shapes.Add(new Square("s1", 2));
         shapes.Add(new Rectangle("r1", 2, 3));
